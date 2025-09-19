@@ -6,15 +6,32 @@
     <title>Image Gallery</title>
 </head>
 <body>
-    <div>
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <h1>Image Gallery</h1>
         <img src="https://imgs.search.brave.com/-Tmaayd_uJwT-aoMGZMON0iQJvoJQDwWbAwSb1MqCME/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzFmbTFMLUxoVUwu/anBn" alt="Logo" style="width:200px">
         <button onclick="changeImage()">Change Image</button>
     </div>
     <script>
+        var images = [
+            {
+                src: "https://imgs.search.brave.com/-Tmaayd_uJwT-aoMGZMON0iQJvoJQDwWbAwSb1MqCME/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzFmbTFMLUxoVUwu/anBn",
+                alt: "Logo"
+            },
+            {
+                src: "https://imgs.search.brave.com/KduxKtHYttxgnVKrBZtuw6dPVUsgiHObDPnGHeocDnY/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi9iL2I2L0lt/YWdlX2NyZWF0ZWRf/d2l0aF9hX21vYmls/ZV9waG9uZS5wbmcv/MTIwMHB4LUltYWdl/X2NyZWF0ZWRfd2l0/aF9hX21vYmlsZV9w/aG9uZS5wbmc",
+                alt: "Mobile Phone Drawing"
+            },
+            {
+                src: "https://imgs.search.brave.com/KJm5w-cbELGkNcYvZ6RLPOkg9y9vZK_xGQGWeDH31N8/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy9i/L2I2L1BlbmNpbF9k/cmF3aW5nX29mX2Ff/Z2lybF9pbl9lY3N0/YXN5LmpwZw",
+                alt: "Pencil Drawing of a Girl"
+            }
+        ];
+        var currentIndex = 0;
         function changeImage() {
+            currentIndex = (currentIndex + 1) % images.length;
             var img = document.querySelector("img");
-            img.src = "https://imgs.search.brave.com/KduxKtHYttxgnVKrBZtuw6dPVUsgiHObDPnGHeocDnY/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi9iL2I2L0lt/YWdlX2NyZWF0ZWRf/d2l0aF9hX21vYmls/ZV9waG9uZS5wbmcv/MTIwMHB4LUltYWdl/X2NyZWF0ZWRfd2l0/aF9hX21vYmlsZV9w/aG9uZS5wbmc";
-            img.alt = "https://imgs.search.brave.com/KJm5w-cbELGkNcYvZ6RLPOkg9y9vZK_xGQGWeDH31N8/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy9i/L2I2L1BlbmNpbF9k/cmF3aW5nX29mX2Ff/Z2lybF9pbl9lY3N0/YXN5LmpwZw";
+            img.src = images[currentIndex].src;
+            img.alt = images[currentIndex].alt;
         }
     </script>
 </body>
