@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <style>
+        .input_div{
+            background: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+            width: 40%;
+            height: 400px;
+            margin: 10px;
+            padding: 10px;
+        }
+        .preview_div{
+            background: linear-gradient(to right, #a1c4fd 0%, #c2e9fb 100%);
+            width: 50%;
+            height: 400px;
+            margin: 10px;
+            padding: 10px;
+            border:black solid 1px;
+        }
+       table{
+        border:none;
+       }
+       td{
+        border:none;
+        margin: 10px;
+        padding: 10px;
+        text-align: left;
+       }
+       tr{
+        border:none;
+        margin: 10px;
+        padding: 10px;
+        text-align: left;
+        justify-content: right;
+
+       }
+       h1{
+        display: block;
+            text-align: center;
+       }
+       h2{
+        display: block;
+        text-align: center;
+       }
+         h3{
+          text-align: left;
+         }
+
+    </style>
+</head>
+<body>
+    <div style="border:black solid 1px; display: flex1; float: left;" id="input_div" class="input_div">
+        <table>
+            <tr><td>Your name<input type="text" id="name_input"></td></tr>
+            <tr><td>Qualification<input type="text" id="qualification_input"></td></tr>
+            <tr><td>Programming Skills<input type="text" id="skills_input1">
+                <td><input type="text" id="skills_input2"></td>
+                <td><input type="text" id="skills_input3"></td>
+            </td></tr>
+        </table>
+    
+    <button onclick="fill()">SUBMIT</button>
+    </div>
+    <div style="display: flex2; float: right;" id="preview_div" class="preview_div">
+        <img id="image" src="profile_img_1.png" alt="Profile Image" width="150" height="150" style="border-radius: 50%;">
+        <h1 id="name"></h1>
+        <h2 id="qualification"></h2>
+        <h3 id="skills"></h3>
+    </div>
+    <script>
+        function fill(){
+            let x=document.getElementById("name_input");
+            let y=x.value;
+            document.getElementById("name").innerHTML=y;
+
+            z=document.getElementById("qualification_input");
+            w=z.value;
+            document.getElementById("qualification").innerHTML=w;
+
+            a=document.getElementById("skills_input1");
+            c=document.getElementById("skills_input2");
+            d=document.getElementById("skills_input3");
+            b=a.value;
+            document.getElementById("skills").innerHTML="Programming Skills: <br>"+b+"<br>"+c.value+"<br>"+d.value;
+        }
+    
+    </script>
+
+
+    
+</body>
+</html>

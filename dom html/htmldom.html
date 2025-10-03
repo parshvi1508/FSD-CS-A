@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML DOM Example</title>
+</head>
+<body>
+    <button onclick="adaparagraph()">Add Paragraph</button>
+    <p>This is old paragraph</p>
+    <script>
+        function adaparagraph(){
+            const para=document.createElement("p");
+            para.textContent="This is new paragraph";para.style.background="blue";
+            para.style.color='white';
+            document.body.appendChild(para);
+        }
+        const id=document.getElementById("para");
+        const className=document.querySelector(".para");
+        
+    </script>
+</body>
+</html>
