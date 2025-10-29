@@ -1,0 +1,4 @@
+node_modules
+BOOK-NPM-APP/node_modules
+dist
+.parcel-cache
