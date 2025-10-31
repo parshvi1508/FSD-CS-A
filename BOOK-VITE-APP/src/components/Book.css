@@ -1,0 +1,8 @@
+.book-card{display:flex;gap:16px;align-items:flex-start;padding:12px;border:1px solid #ddd;border-radius:8px;max-width:520px;background:#fff}
+.book-image{width:120px;height:auto;border-radius:4px}
+.book-details{display:flex;flex-direction:column}
+.book-title{margin:0 0 6px 0;font-size:1.1rem}
+.book-author{margin:0 0 6px 0;color:#555}
+.book-price{margin:0 0 12px 0;font-weight:600}
+.add-to-cart-button{background:#1976d2;color:#fff;border:none;padding:8px 12px;border-radius:4px;cursor:pointer}
+.add-to-cart-button:hover{opacity:0.95}
