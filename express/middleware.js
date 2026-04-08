@@ -1,4 +1,7 @@
 import express from "express"
+import logger from "./middleware/logger.js";
+import agevalidate from "./middleware/agevalidate.js";
+import auth from "./middleware/auth.js";
 const app=express();
 const port=3001;
 const users=[{id: 1,name: "Ashish",email:"ab@gmail.com"},
@@ -6,6 +9,9 @@ const users=[{id: 1,name: "Ashish",email:"ab@gmail.com"},
     {id: 3,name: "Ashish3",email:"ab3@gmail.com"}
 ]
 app.use(express.json());
+app.use(logger);
+app.use(agevalidate);
+app.use(auth);
 app.get("/users",(req,res)=>{
    res.status(200).json(users);
 })
